@@ -1,0 +1,250 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<title>Collections - ChronoVault</title>
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+
+<style>
+body {
+    margin:0;
+    font-family: Arial;
+    background:#f5f7fa;
+
+    /* 🔥 PAGE LOAD ANIMATION */
+    animation: slideIn 0.5s ease;
+}
+
+/* 🔥 ANIMATIONS */
+@keyframes slideIn {
+    from { transform: translateX(50px); opacity:0; }
+    to { transform: translateX(0); opacity:1; }
+}
+
+.fade-out {
+    animation: slideOut 0.4s ease forwards;
+}
+
+@keyframes slideOut {
+    from { transform: translateX(0); opacity:1; }
+    to { transform: translateX(-50px); opacity:0; }
+}
+
+/* HEADER */
+header {
+    text-align:center;
+    padding:15px;
+    background:white;
+    font-size:24px;
+    font-weight:bold;
+    box-shadow:0 2px 8px rgba(0,0,0,0.1);
+}
+
+/* NAV */
+nav {
+    display:flex;
+    justify-content:center;
+    background:#e3eaf2;
+}
+
+nav a {
+    padding:14px 20px;
+    text-decoration:none;
+    color:#222;
+    font-weight:bold;
+}
+
+nav a:hover {
+    background:#cdd9e5;
+}
+
+/* PRODUCTS */
+.products {
+    display:flex;
+    flex-wrap:wrap;
+    justify-content:center;
+    padding:30px;
+}
+
+/* CARD */
+.card {
+    display:flex;
+    flex-direction:column;
+    justify-content:space-between;
+    background:white;
+    margin:15px;
+    width:250px;
+    height:380px;
+    border-radius:12px;
+    padding:10px;
+    box-shadow:0 4px 15px rgba(0,0,0,0.1);
+    transition:0.3s;
+}
+
+.card:hover {
+    transform:translateY(-5px);
+}
+
+/* IMAGE */
+.card img {
+    width:100%;
+    height:200px;
+    object-fit:cover;
+    border-radius:10px;
+    transition:0.4s;
+}
+
+.card:hover img {
+    transform:scale(1.1);
+}
+
+/* BUTTON */
+button {
+    background:#4da6ff;
+    color:white;
+    border:none;
+    padding:10px;
+    border-radius:5px;
+    cursor:pointer;
+    transition:0.2s;
+}
+
+button:hover {
+    transform:scale(1.05);
+}
+
+button:active {
+    transform:scale(0.95);
+}
+
+.card button {
+    margin-top:auto;
+}
+</style>
+</head>
+
+<body>
+
+<header>ChronoVault</header>
+
+<nav>
+<a href="index.html">Home</a>
+<a href="brands.html">Brands</a>
+<a href="collections.html">Collections</a>
+<a href="contact.html">Contact</a>
+<a href="cart.html">Cart</a>
+</nav>
+
+<h1 style="text-align:center; margin-top:20px;">All Watches</h1>
+
+<div class="products">
+
+<!-- 🔥 ALL PRODUCTS -->
+
+<div class="card">
+<img src="https://cdn.thewatchpages.com/app/uploads/2025/04/30204022/rolex-gmt-master-ii-126715chnr-0002.jpeg?width=672">
+<h3>Polex Ultra Classic</h3>
+<p>₹750000</p>
+<button onclick="addToCart('Polex Ultra Classic',750000,this)">Add to Cart</button>
+</div>
+
+<div class="card">
+<img src="https://img.tatacliq.com/images/i26//658Wx734H/MP000000028085646_658Wx734H_202508301255101.jpeg">
+<h3>Bentley Royal Dial</h3>
+<p>₹480000</p>
+<button onclick="addToCart('Bentley Royal Dial',480000,this)">Add to Cart</button>
+</div>
+
+<div class="card">
+<img src="https://cdn1.ethoswatches.com/media/catalog/product/cache/6e5de5bc3d185d8179cdc7258143f41a/h/u/hublot-spirit-of-big-bang-642-nx-0170-rx-large.jpg">
+<h3>Etho's Companion Pro</h3>
+<p>₹290000</p>
+<button onclick="addToCart('Etho Companion Pro',290000,this)">Add to Cart</button>
+</div>
+
+<div class="card">
+<img src="https://cdn1.ethoswatches.com/media/catalog/product/cache/6e5de5bc3d185d8179cdc7258143f41a/j/a/jacob-co-epic-x-ex100-43-bb-aa-abrua-large.jpg">
+<h3>Zealand Classic Mechanical</h3>
+<p>₹350000</p>
+<button onclick="addToCart('Zealand Classic Mechanical',350000,this)">Add to Cart</button>
+</div>
+
+<div class="card">
+<img src="https://www.justwatches.com/cdn/shop/files/PWNAA0122.jpg?v=1734945997&width=3000">
+<h3>Benling Bones Dials</h3>
+<p>₹220000</p>
+<button onclick="addToCart('Benling Bones Dials',220000,this)">Add to Cart</button>
+</div>
+
+<div class="card">
+<img src="https://cdn1.ethoswatches.com/media/catalog/product/cache/6e5de5bc3d185d8179cdc7258143f41a/l/o/louis-moinet-memoris-lm-79-20-31-large.jpg">
+<h3>Bob's Minute Hand</h3>
+<p>₹180000</p>
+<button onclick="addToCart('Bobs Minute Hand',180000,this)">Add to Cart</button>
+</div>
+
+<div class="card">
+<img src="https://cdn1.ethoswatches.com/media/catalog/product/cache/6e5de5bc3d185d8179cdc7258143f41a/h/u/hublot-big-bang-451-ex-5120-ex-large.jpg">
+<h3>Mayank's Signature Dial</h3>
+<p>₹600000</p>
+<button onclick="addToCart('Mayanks Signature Dial',600000,this)">Add to Cart</button>
+</div>
+
+<div class="card">
+<img src="https://cdn1.ethoswatches.com/media/catalog/product/cache/6e5de5bc3d185d8179cdc7258143f41a/b/r/breitling-avenger-sb0147101i1x2-large.jpg">
+<h3>Casual Yellow Dial</h3>
+<p>₹90000</p>
+<button onclick="addToCart('Casual Yellow Dial',90000,this)">Add to Cart</button>
+</div>
+
+<div class="card">
+<img src="https://cdn1.ethoswatches.com/media/catalog/product/cache/6e5de5bc3d185d8179cdc7258143f41a/h/u/hublot-big-bang-441-ul-5820-nr-large.jpg">
+<h3>Heavenly Pink Companion</h3>
+<p>₹120000</p>
+<button onclick="addToCart('Heavenly Pink Companion',120000,this)">Add to Cart</button>
+</div>
+
+<div class="card">
+<img src="https://cdn1.ethoswatches.com/media/catalog/product/cache/6e5de5bc3d185d8179cdc7258143f41a/h/u/hublot-big-bang-642-qk-0110-nr-large.jpg">
+<h3>Polex Oyster Perpetual</h3>
+<p>₹850000</p>
+<button onclick="addToCart('Polex Oyster Perpetual',850000,this)">Add to Cart</button>
+</div>
+
+</div>
+
+<script>
+let cart = JSON.parse(localStorage.getItem("cart")) || [];
+
+function addToCart(name, price, btn){
+    cart.push({name, price});
+    localStorage.setItem("cart", JSON.stringify(cart));
+
+    btn.innerText = "✔ Added!";
+    btn.style.background = "green";
+
+    setTimeout(()=>{
+        btn.innerText = "Add to Cart";
+        btn.style.background = "#4da6ff";
+    },1000);
+}
+
+/* 🔥 PAGE TRANSITION */
+document.querySelectorAll("a").forEach(link => {
+    link.addEventListener("click", function(e) {
+        const href = this.getAttribute("href");
+
+        if (!href || href.startsWith("#")) return;
+
+        e.preventDefault();
+        document.body.classList.add("fade-out");
+
+        setTimeout(() => {
+            window.location.href = href;
+        }, 400);
+    });
+});
+</script>
+
+</body>
+</html>

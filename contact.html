@@ -1,0 +1,193 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<title>Contact - ChronoVault</title>
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+
+<style>
+body {
+    margin:0;
+    font-family: Arial;
+    background:#f5f7fa;
+
+    /* 🔥 Page animation */
+    animation: slideIn 0.5s ease;
+}
+
+/* 🔥 Animations */
+@keyframes slideIn {
+    from { transform: translateX(50px); opacity:0; }
+    to { transform: translateX(0); opacity:1; }
+}
+
+.fade-out {
+    animation: slideOut 0.4s ease forwards;
+}
+
+@keyframes slideOut {
+    from { transform: translateX(0); opacity:1; }
+    to { transform: translateX(-50px); opacity:0; }
+}
+
+/* HEADER */
+header {
+    text-align:center;
+    padding:15px;
+    background:white;
+    font-size:24px;
+    font-weight:bold;
+    box-shadow:0 2px 8px rgba(0,0,0,0.1);
+}
+
+/* NAV */
+nav {
+    display:flex;
+    justify-content:center;
+    background:#e3eaf2;
+}
+
+nav a {
+    padding:14px 20px;
+    text-decoration:none;
+    color:#222;
+    font-weight:bold;
+}
+
+nav a:hover {
+    background:#cdd9e5;
+}
+
+/* CONTAINER */
+.container {
+    display:flex;
+    justify-content:center;
+    align-items:center;
+    height:80vh;
+}
+
+/* FORM BOX */
+.form-box {
+    background:white;
+    padding:30px;
+    border-radius:15px;
+    width:320px;
+    box-shadow:0 4px 15px rgba(0,0,0,0.1);
+    text-align:center;
+}
+
+/* INPUTS */
+input, textarea {
+    width:100%;
+    padding:10px;
+    margin:10px 0;
+    border:1px solid #ccc;
+    border-radius:5px;
+    transition:0.3s;
+}
+
+/* 🔥 Focus animation */
+input:focus, textarea:focus {
+    border-color:#4da6ff;
+    outline:none;
+    box-shadow:0 0 8px rgba(77,166,255,0.5);
+}
+
+/* BUTTON */
+button {
+    width:100%;
+    padding:10px;
+    background:#4da6ff;
+    color:white;
+    border:none;
+    border-radius:5px;
+    cursor:pointer;
+    transition:0.3s;
+}
+
+button:hover {
+    transform:scale(1.05);
+    background:#3399ff;
+}
+
+button:active {
+    transform:scale(0.95);
+}
+
+/* SUCCESS MESSAGE */
+.success {
+    display:none;
+    color:green;
+    margin-top:10px;
+}
+</style>
+</head>
+
+<body>
+
+<header>ChronoVault</header>
+
+<nav>
+<a href="index.html">Home</a>
+<a href="brands.html">Brands</a>
+<a href="collections.html">Collections</a>
+<a href="contact.html">Contact</a>
+<a href="cart.html">Cart</a>
+</nav>
+
+<div class="container">
+
+<div class="form-box">
+
+<h2>Contact Us</h2>
+
+<form onsubmit="submitForm(event)">
+<input type="text" placeholder="Your Name" required>
+<input type="email" placeholder="Your Email" required>
+<textarea rows="4" placeholder="Your Message" required></textarea>
+
+<button type="submit">Send Message</button>
+</form>
+
+<p class="success" id="successMsg">✔ Message sent successfully!</p>
+
+<p style="margin-top:15px;">
+Brand Owner: Mayank<br>
+<span style="color: blue;
+text-decoration: underline;">
+mayanksalame2006@gmail.com
+</p>
+<p style="margin-top:15px;">
+Coordinators: Dewang, Aryan, Siddhart, Anshul, Pratik<br>
+</p>
+</div>
+
+</div>
+
+<script>
+/* 🔥 FORM HANDLER */
+function submitForm(e){
+    e.preventDefault();
+
+    document.getElementById("successMsg").style.display = "block";
+}
+
+/* 🔥 PAGE TRANSITION */
+document.querySelectorAll("a").forEach(link => {
+    link.addEventListener("click", function(e) {
+        const href = this.getAttribute("href");
+
+        if (!href || href.startsWith("#")) return;
+
+        e.preventDefault();
+        document.body.classList.add("fade-out");
+
+        setTimeout(() => {
+            window.location.href = href;
+        }, 400);
+    });
+});
+</script>
+
+</body>
+</html>

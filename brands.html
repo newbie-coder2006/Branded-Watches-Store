@@ -1,0 +1,141 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<title>Brands - ChronoVault</title>
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+
+<style>
+body {
+    font-family: Arial;
+    margin:0;
+    background:#f5f7fa;
+    text-align:center;
+
+    /* 🔥 PAGE LOAD ANIMATION */
+    animation: slideIn 0.5s ease;
+}
+
+/* 🔥 ANIMATIONS */
+@keyframes slideIn {
+    from {
+        transform: translateX(50px);
+        opacity:0;
+    }
+    to {
+        transform: translateX(0);
+        opacity:1;
+    }
+}
+
+.fade-out {
+    animation: slideOut 0.4s ease forwards;
+}
+
+@keyframes slideOut {
+    from {
+        transform: translateX(0);
+        opacity:1;
+    }
+    to {
+        transform: translateX(-50px);
+        opacity:0;
+    }
+}
+
+/* HEADER */
+header {
+    padding:15px;
+    background:white;
+    font-size:24px;
+    font-weight:bold;
+    box-shadow:0 2px 8px rgba(0,0,0,0.1);
+}
+
+/* NAVBAR */
+nav {
+    display:flex;
+    justify-content:center;
+    background:#e3eaf2;
+}
+
+nav a {
+    padding:14px 20px;
+    text-decoration:none;
+    color:#222;
+    font-weight:bold;
+    transition:0.3s;
+}
+
+nav a:hover {
+    background:#cdd9e5;
+}
+
+/* CONTENT */
+.container {
+    margin-top:50px;
+}
+
+/* BRAND BOX */
+.brand {
+    background:white;
+    width:300px;
+    margin:20px auto;
+    padding:20px;
+    border-radius:12px;
+    box-shadow:0 4px 15px rgba(0,0,0,0.1);
+    transition:0.3s;
+}
+
+/* 🔥 HOVER EFFECT */
+.brand:hover {
+    transform:translateY(-5px);
+    box-shadow:0 6px 20px rgba(0,0,0,0.15);
+}
+
+</style>
+</head>
+
+<body>
+
+<header>ChronoVault</header>
+
+<nav>
+<a href="index.html">Home</a>
+<a href="brands.html">Brands</a>
+<a href="collections.html">Collections</a>
+<a href="contact.html">Contact</a>
+<a href="cart.html">Cart</a>
+</nav>
+
+<div class="container">
+
+<h1>Our Brands</h1>
+
+<div class="brand">Polex Ultra</div>
+<div class="brand">Bentley Dials</div>
+<div class="brand">Etho's Companion</div>
+
+</div>
+
+<script>
+/* 🔥 PAGE TRANSITION SCRIPT */
+document.querySelectorAll("a").forEach(link => {
+    link.addEventListener("click", function(e) {
+        const href = this.getAttribute("href");
+
+        if (!href || href.startsWith("#")) return;
+
+        e.preventDefault();
+
+        document.body.classList.add("fade-out");
+
+        setTimeout(() => {
+            window.location.href = href;
+        }, 400);
+    });
+});
+</script>
+
+</body>
+</html>
